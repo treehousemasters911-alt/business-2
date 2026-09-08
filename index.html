@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#f7d6d8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>A Special Digital Gift For You ❤️</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Ambient Audio Floating Player -->
+  <div class="audio-control" id="audioToggle" title="Play Romantic Melody">
+    <div class="music-disc" id="musicDisc">
+      <span class="disc-icon">🎵</span>
+    </div>
+    <span class="music-label">Romantic Chime</span>
+  </div>
+
+  <!-- Floating Hearts Background Canvas -->
+  <canvas id="heartsCanvas"></canvas>
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Mobile Frame Wrapper -->
+  <div class="app-viewport">
+    <main class="gift-container" id="giftSlider">
+      
+      <!-- ============================================ -->
+      <!-- PAGE 1: THE GIFT UNWRAPPING & WELCOME COVER -->
+      <!-- ============================================ -->
+      <section class="gift-page page-1 active" id="page-1" data-page="1">
+          <div class="cover-header-card">
+            <div class="sparkle-badge">✨ Made with love for you ✨</div>
+            <h1 class="romantic-title">To My Dearest Love</h1>
+            <p class="subtitle">A special little digital surprise just for you</p>
+          </div>
+
+          <!-- Interactive Gift Box / Envelope -->
+          <div class="envelope-wrapper" id="envelopeTrigger">
+            <div class="envelope" id="envelope">
+              <div class="envelope-flap"></div>
+              <div class="envelope-pocket">
+                <div class="wax-seal">
+                  <span>❤️</span>
+                </div>
+              </div>
+              <div class="letter-preview" id="letterPreview">
+                <div class="letter-inner">
+                  <p class="script-text">Happy Birthday, Olivia! 💕</p>
+                  <p class="letter-snip">Every moment with you is magic. Turn each page to discover our memories...</p>
+                  <span class="mini-tag">Tap to Open</span>
+                </div>
+              </div>
+              <div class="ribbon-v"></div>
+              <div class="ribbon-h"></div>
+            </div>
+            <div class="tap-hint-pill">
+              <span class="pulse-icon">👆</span> Tap the ribbon to unwrap
+            </div>
+          </div>
+
+          <div class="welcome-actions">
+            <button class="action-btn glow-btn" id="startJourneyBtn">
+              <span>Open My Gift</span>
+              <span class="arrow-icon">🎁 →</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================ -->
+      <!-- PAGE 2: OLIVIA'S BIRTHDAY SCRAPBOOK COLLAGE  -->
+      <!-- ============================================ -->
+      <section class="gift-page page-2" id="page-2" data-page="2">
+        <div class="page-content scrollable">
+          <div class="page-header-ribbon">
+            <span class="tag-date">December 30 🎂</span>
+            <h2 class="scrapbook-title">Happy Birthday Olivia!</h2>
+          </div>
+
+          <div class="scrapbook-frame-container">
+            <!-- Olivia's Collage with Interactive Pin Overlays -->
+            <div class="collage-card" id="collageCard">
+              <img src="./Untitled%20design.png" onerror="this.onerror=null; this.src='./Untitled design.png'" alt="Happy Birthday Olivia Collage" class="collage-main-img" id="collageImage">
+              
+              <!-- Interactive Love Pins on Photos -->
+              <div class="memory-pin pin-1" data-caption="Your smile that lights up every room we walk into! ✨" style="top: 18%; left: 22%;">
+                <span class="pin-marker">📍</span>
+                <span class="pin-tooltip">Our brightest laugh</span>
+              </div>
+
+              <div class="memory-pin pin-2" data-caption="The dreamiest seaside breeze with my favorite person by the shore 🌊" style="top: 48%; right: 18%;">
+                <span class="pin-marker">📍</span>
+                <span class="pin-tooltip">Seaside Magic</span>
+              </div>
+
+              <div class="memory-pin pin-3" data-caption="Walking hand-in-hand wherever the road takes us 🌸" style="top: 58%; left: 16%;">
+                <span class="pin-marker">📍</span>
+                <span class="pin-tooltip">Endless Road</span>
+              </div>
+
+              <div class="memory-pin pin-4" data-caption="Forever my partner in crime and late-night laughing fits! 💕" style="top: 78%; right: 26%;">
+                <span class="pin-marker">📍</span>
+                <span class="pin-tooltip">Unstoppable Joy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Memory Note Display when pin is tapped -->
+          <div class="polaroid-caption-box" id="pinCaptionBox">
+            <span class="heart-bullet">💖</span>
+            <p id="pinCaptionText">Tap any glowing pin above to read a secret memory!</p>
+          </div>
+
+          <div class="tip-subtext">
+            <span>✨ Swipe or tap arrows to see your photo strip</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================ -->
+      <!-- PAGE 3: VINTAGE 3-FRAME POLAROID STRIP      -->
+      <!-- ============================================ -->
+      <section class="gift-page page-3" id="page-3" data-page="3">
+        <div class="page-content scrollable">
+          <div class="page-header-ribbon">
+            <span class="tag-date">Memories in Film 🎞️</span>
+            <h2 class="scrapbook-title">Our Favorite Moments</h2>
+          </div>
+
+          <p class="instruction-note">
+            📸 <em>Filled with special memories! Tap any photo to replace with your own.</em>
+          </p>
+
+          <!-- Polaroid Strip with 3 Filled Photo Frames -->
+          <div class="strip-wrapper">
+            <div class="strip-card">
+              <!-- Background Strip Template -->
+              <img src="./204139795604881653.jpg" alt="Vintage Polaroid Photo Strip" class="strip-bg-img">
+
+              <!-- Slot 1 (Top Box) -->
+              <div class="photo-slot slot-top" id="slot-1" title="Tap to change photo">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop" alt="Memory 1" id="slotImg-1" class="slot-img">
+                <div class="slot-overlay">
+                  <span class="camera-icon">📷</span>
+                  <span class="overlay-text">Change</span>
+                </div>
+                <input type="file" accept="image/*" class="slot-file-input" id="slotInput-1" data-slot="1">
+              </div>
+
+              <!-- Slot 2 (Middle Box) -->
+              <div class="photo-slot slot-mid" id="slot-2" title="Tap to change photo">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop" alt="Memory 2" id="slotImg-2" class="slot-img">
+                <div class="slot-overlay">
+                  <span class="camera-icon">📷</span>
+                  <span class="overlay-text">Change</span>
+                </div>
+                <input type="file" accept="image/*" class="slot-file-input" id="slotInput-2" data-slot="2">
+              </div>
+
+              <!-- Slot 3 (Bottom Box) -->
+              <div class="photo-slot slot-bot" id="slot-3" title="Tap to change photo">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" alt="Memory 3" id="slotImg-3" class="slot-img">
+                <div class="slot-overlay">
+                  <span class="camera-icon">📷</span>
+                  <span class="overlay-text">Change</span>
+                </div>
+                <input type="file" accept="image/*" class="slot-file-input" id="slotInput-3" data-slot="3">
+              </div>
+            </div>
+          </div>
+
+          <!-- Sweet Tape Note -->
+          <div class="washi-note">
+            <span class="tape-strip"></span>
+            <p class="typewriter-text">"Every second by your side is my favorite frame."</p>
+            <span class="signature">Forever yours ❤️</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================ -->
+      <!-- PAGE 4: BLUE GINGHAM PICNIC & LOVE COUPONS  -->
+      <!-- ============================================ -->
+      <section class="gift-page page-4" id="page-4" data-page="4">
+        <div class="page-content scrollable">
+          
+          <div class="gingham-badge">
+            <span>🧺 Olivia's Love Treats</span>
+          </div>
+
+          <!-- Pinned Cute Love Note -->
+          <div class="pinned-card">
+            <div class="cute-pin">📌</div>
+            <h3 class="card-headline">Reasons You Are Amazing</h3>
+            <p class="card-message">
+              Your gentle heart, your sweet laughter, and the cozy warmth you bring wherever you go. Here are some redeemable coupons just for you!
+            </p>
+          </div>
+
+          <!-- Interactive Love Coupons List -->
+          <div class="coupons-list">
+            
+            <!-- Coupon 1 -->
+            <div class="coupon-ticket" data-coupon="1">
+              <div class="coupon-left">
+                <span class="coupon-emoji">🤗</span>
+              </div>
+              <div class="coupon-center">
+                <div class="coupon-title">Unlimited Warm Cuddles</div>
+                <div class="coupon-desc">Redeemable anytime, anywhere!</div>
+              </div>
+              <button class="redeem-btn" onclick="redeemCoupon(this, 'Unlimited Warm Cuddles')">
+                <span>Redeem</span>
+              </button>
+            </div>
+
+            <!-- Coupon 2 -->
+            <div class="coupon-ticket" data-coupon="2">
+              <div class="coupon-left">
+                <span class="coupon-emoji">☕</span>
+              </div>
+              <div class="coupon-center">
+                <div class="coupon-title">Boba & Dessert Date</div>
+                <div class="coupon-desc">Your favorite drink & sweet treat on me.</div>
+              </div>
+              <button class="redeem-btn" onclick="redeemCoupon(this, 'Boba & Dessert Date')">
+                <span>Redeem</span>
+              </button>
+            </div>
+
+            <!-- Coupon 3 -->
+            <div class="coupon-ticket" data-coupon="3">
+              <div class="coupon-left">
+                <span class="coupon-emoji">🎬</span>
+              </div>
+              <div class="coupon-center">
+                <div class="coupon-title">Movie Night Choice</div>
+                <div class="coupon-desc">You pick the movie, I make the snacks.</div>
+              </div>
+              <button class="redeem-btn" onclick="redeemCoupon(this, 'Movie Night Choice')">
+                <span>Redeem</span>
+              </button>
+            </div>
+
+            <!-- Coupon 4 -->
+            <div class="coupon-ticket" data-coupon="4">
+              <div class="coupon-left">
+                <span class="coupon-emoji">🚗</span>
+              </div>
+              <div class="coupon-center">
+                <div class="coupon-title">Late Night Stargazing</div>
+                <div class="coupon-desc">Drive, good music & midnight ice cream.</div>
+              </div>
+              <button class="redeem-btn" onclick="redeemCoupon(this, 'Late Night Stargazing')">
+                <span>Redeem</span>
+              </button>
+            </div>
+
+            <!-- Coupon 5 -->
+            <div class="coupon-ticket" data-coupon="5">
+              <div class="coupon-left">
+                <span class="coupon-emoji">👑</span>
+              </div>
+              <div class="coupon-center">
+                <div class="coupon-title">Princess For A Day</div>
+                <div class="coupon-desc">Total pampering & zero stress guaranteed!</div>
+              </div>
+              <button class="redeem-btn" onclick="redeemCoupon(this, 'Princess For A Day')">
+                <span>Redeem</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ============================================ -->
+      <!-- PAGE 5: MAKE A WISH CAKE & LOVE LETTER FINALE-->
+      <!-- ============================================ -->
+      <section class="gift-page page-5" id="page-5" data-page="5">
+        <div class="page-content scrollable center-content-p5">
+          <div class="finale-header">
+            <span class="starlight-badge">⭐ Happy Birthday My Love ⭐</span>
+            <h2 class="wish-title">Make A Sweet Wish</h2>
+            <p class="wish-subtitle">Close your eyes, think of something special, and tap the candle to blow it out!</p>
+          </div>
+
+          <!-- Interactive Birthday Cake & Flame -->
+          <div class="cake-container" id="cakeContainer">
+            <div class="cake-plate"></div>
+            <div class="cake-body">
+              <div class="cake-layer layer-bottom"></div>
+              <div class="cake-layer layer-top">
+                <div class="frosting-drips">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="strawberries">🍓 🍓 🍓</div>
+              </div>
+              <div class="candle" id="candle">
+                <div class="candle-wick"></div>
+                <div class="candle-flame" id="flame">
+                  <div class="flame-inner"></div>
+                </div>
+                <div class="candle-smoke" id="smoke"></div>
+              </div>
+            </div>
+            <div class="blow-candle-hint" id="blowHint">
+              <span>💨 Tap the flame to blow!</span>
+            </div>
+          </div>
+
+          <!-- Heartfelt Love Letter (Revealed after candle is blown) -->
+          <div class="finale-letter-card" id="finaleLetter">
+            <div class="letter-wax-stamp">❤️</div>
+            <h3 class="letter-dear">Dearest Olivia,</h3>
+            <p class="letter-body" id="letterBodyText">
+              From the first moment I got to know you, my life became brighter, warmer, and so much more joyful. 
+              Your smile is my favorite view in the whole world, and having you by my side is the greatest blessing.
+              <br><br>
+              On your birthday, I wish you endless happiness, good health, dreams coming true, and all the love in the universe. 
+              Thank you for being you.
+            </p>
+            <div class="letter-closing">
+              <p>Forever & Always,</p>
+              <p class="letter-signature">With all my love ❤️</p>
+            </div>
+            
+            <div class="letter-actions">
+              <button class="relight-btn" id="relightBtn">🕯️ Re-light Candle</button>
+              <button class="edit-letter-btn" id="editLetterBtn">✏️ Customize Note</button>
+            </div>
+          </div>
+
+          <!-- Restart Journey Button -->
+          <div class="restart-wrapper">
+            <button class="action-btn outline-btn" id="restartBtn">
+              <span>🔄 Return to Cover</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Mobile Navigation Controls Bar -->
+    <nav class="mobile-nav-bar" aria-label="Page Navigation">
+      <button class="nav-arrow-btn" id="prevBtn" title="Previous Page">❮</button>
+      
+      <div class="page-indicators" id="pageIndicators">
+        <button class="dot-btn active" data-page="1" aria-label="Page 1"></button>
+        <button class="dot-btn" data-page="2" aria-label="Page 2"></button>
+        <button class="dot-btn" data-page="3" aria-label="Page 3"></button>
+        <button class="dot-btn" data-page="4" aria-label="Page 4"></button>
+        <button class="dot-btn" data-page="5" aria-label="Page 5"></button>
+      </div>
+
+      <button class="nav-arrow-btn" id="nextBtn" title="Next Page">❯</button>
+    </nav>
+  </div>
+
+  <!-- Note Customization Modal -->
+  <div class="modal-backdrop" id="customNoteModal">
+    <div class="modal-card">
+      <h3>Edit Your Love Letter</h3>
+      <p class="modal-sub">Personalize this message for Olivia</p>
+      <textarea id="customNoteInput" rows="6" placeholder="Write your heartfelt message here..."></textarea>
+      <div class="modal-buttons">
+        <button class="modal-cancel-btn" id="closeModalBtn">Cancel</button>
+        <button class="modal-save-btn" id="saveModalBtn">Save Letter ❤️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="./app.js"></script>
+</body>
+</html>
